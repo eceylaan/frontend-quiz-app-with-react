@@ -3,17 +3,21 @@ import "./App.css";
 import { accessibilityQuestions, cssQuestions, jsQuestions, htmlQuestions } from "./data.js";
 import { Quiz } from "./Quiz.jsx";
 import useLocalStorage from "./hooks/useLocalStorage.js";
+import ThemeSwitcher from "./theme.jsx";
 function App() {
   const [quizType, setQuizType] = useLocalStorage("quizType", "");
   return (
     <>
-      <div className="container">
+      <div className="container ">
         <header className="flex-row">
           <span className="quizType">
             <img src={"/img/" + quizType + ".svg"} alt="" />
             {quizType ? quizType.slice(0, 1).toUpperCase() + quizType.slice(1, quizType.length) : ""}
           </span>
           <span>
+            <ThemeSwitcher />
+          </span>
+          {/* <span>
             <div className="theme">
               <label>
                 <img src="./img/light-theme.svg" alt="" />
@@ -26,7 +30,7 @@ function App() {
                 <img src="./img/dark-theme.svg" alt="" />
               </label>
             </div>
-          </span>
+          </span> */}
         </header>
         {quizType === "" ? (
           <div className="grid-container">

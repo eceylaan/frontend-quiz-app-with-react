@@ -8,6 +8,33 @@ body {
   background-color: #f4f6fa;
   font-family: "Rubik", sans-serif;
 }
+body.light {
+  background: #f4f6fa;
+  color: #313e51;
+}
+
+body.dark {
+  background: #2c0644;
+  .ask {
+    color: #f4f6fa;
+  }
+  .nthQuestion {
+    color: #f4f6fa;
+  }
+  .quizType {
+    color: #f4f6fa;
+  }
+
+  .flex-col button {
+    background-color: #6608a0;
+    color: #f4f6fa;
+  }
+
+  .choice-button option {
+    background-color: #2c0644;
+    color: #f4f6fa;
+  }
+}
 
 .heading-l {
   font-size: 64px;
@@ -152,7 +179,7 @@ input:checked + .slider:before {
 
   button {
     border: none;
-    width: 564px;
+    max-width: 564px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -166,7 +193,7 @@ input:checked + .slider:before {
     gap: 32px;
 
     img {
-      width: 56px;
+      max-width: 56px;
       height: 56px;
     }
   }
@@ -277,4 +304,38 @@ p {
   font-size: 28px;
   font-weight: 500;
   line-height: 28px;
+}
+
+@media (width<769px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    max-width: 768px;
+  }
+  .choices-content {
+    width: 100%;
+  }
+  .flex-col {
+    width: 100%;
+  }
+  .choice-button {
+    max-width: 100% !important;
+  }
+  .scorePage {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .submit-next-btn {
+    max-width: 640px;
+    padding-block: 32px;
+    background-color: #a729f5;
+    border-radius: 24px;
+    color: #ffffff;
+    box-shadow: 0px 16px 40px 0px #8fa0c124;
+    cursor: pointer;
+    margin-top: 32px;
+    border: none;
+  }
 }
